@@ -259,7 +259,7 @@ class ReportAccountAgedPartnerCustomize(models.AbstractModel):
             self._field_column('currency_rate', name=_("Rate")),
             self._field_column('invoice_date_due', name=_("Expiration Since")),
             self._custom_column(  # Avoid doing twice the sub-select in the view
-                name=_('Original Currency Amount'),
+                name=_('Invoice with as of rate (HKD)'),
                 classes=['number'],
                 formatter=self.format_value,
                 getter=(
