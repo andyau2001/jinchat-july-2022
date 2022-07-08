@@ -86,6 +86,11 @@ class ReportAccountAgedPartnerCustomize(models.AbstractModel):
         # res['columns'][int(l - 6)] = {'name': '', 'no_format': False}
         # res['columns'][int(l - 7)] = {'name': '', 'no_format': False}
 
+    def _format_total_line(self, res, value_dict, options):
+        res['name'] = _('Total')
+        res['colspan'] = len(self._get_column_details(options)) - 1
+        res['columns'] = res['columns'][res['colspan'] - 1:]
+
     def _field_column(self, field_name, sortable=False, name=None, ellipsis=False, blank_if_zero=False,
                       currency_char=False):
         classes = ['text-nowrap']
