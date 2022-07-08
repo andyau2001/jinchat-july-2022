@@ -88,7 +88,7 @@ class ReportAccountAgedPartnerCustomize(models.AbstractModel):
 
     def _format_total_line(self, res, value_dict, options):
         res['name'] = _('Total')
-        res['colspan'] = len(self._get_column_details(options)) - 1
+        res['colspan'] = len(self._get_column_details(options)) - 2
         res['columns'] = res['columns'][res['colspan'] - 1:]
 
     def _field_column(self, field_name, sortable=False, name=None, ellipsis=False, blank_if_zero=False,
