@@ -12,7 +12,7 @@ class ReportAccountAgedPartnerCustomize(models.AbstractModel):
     _inherit = "account.aged.partner"
 
     _auto = False
-    total_line = False
+    total_line = True
 
     order_no = fields.Char(group_operator='max')
     currency_rate = fields.Float(group_operator='max')
